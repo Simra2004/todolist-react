@@ -54,23 +54,6 @@ body {
   margin-bottom: 15px;
 }
 
-.main-input {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #e3e8f0;
-  padding: 8px;
-  border-radius: 5px;
-}
-
-.main-input input {
-  border: none;
-  background: transparent;
-  outline: none;
-  width: 90%;
-  font-size: 16px;
-  padding: 5px;
-}
 
 .main-input span {
   font-size: 20px;
