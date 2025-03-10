@@ -6,10 +6,11 @@ import DoItems from "./components/doitems/doitem";
 const App = () => {
   let [text, setText] = useState("");
   const handlesubmit = () => {
-   SetListItems([text]);
+    SetListItems([...ListItems,text]);
   };
-  let[ListItems,SetListItems]=useState([]);
-  console.log(ListItems);
+  let [ListItems, SetListItems] = useState([]);
+  //list ko ui me show karana hta hai uske lie we use array mapping.loop hta hai jitne items hte hn unko iterate krke display kara deta h .
+  const List = ListItems.map((Item) => Item);
   return (
     <div className="container">
       <div className="header">
@@ -17,7 +18,9 @@ const App = () => {
       </div>
       <MainInput value={text} setText={setText} />
       <h4>you typed {text}</h4>
-      <button type="button" className="submit" onClick={handlesubmit}>
+      {List}
+      <button type="button" className="submit" style={{"display":"block"}}
+       onClick={handlesubmit}>
         submit
       </button>
       <DoItems />
