@@ -1,26 +1,28 @@
-import { useState } from 'react'
-import TodoList from './components/todolist';
-import AddTask from './components/addtask';
-// import WeatherWidget from './components/weather';
-import './App.css';
+import React, { useState } from "react";
+import "./app.css";
 
-export default function App() {
-  const [tasks, setTasks] = useState([]);
-
-  const addTask = (task) => {
-    if (task) setTasks([...tasks, task]);
-  };
-
-  const removeTask = (index) => {
-    setTasks(tasks.filter((_, i) => i !== index));
-  };
-
+const App = () => {
   return (
     <div className="container">
-      {/* <WeatherWidget /> */}
-      <h1 className="title">TO DO NOW</h1>
-      <AddTask addTask={addTask} />
-      <TodoList tasks={tasks} removeTask={removeTask} />
+      <div className="header">
+        <h1>my to do list</h1>
+        <div className="main-input">
+          <input type="text" />
+          {/* icon of plus */} +
+        </div>
+      </div>
+      <div className="body">
+        <div className="input-field">
+          <div className="checkbox">
+            <input type="checkbox" />
+          </div>
+          <div className="text">
+            <span>This will br ypur text</span>
+          </div>
+          <div className="action">$ @</div>
+        </div>
+      </div>
     </div>
   );
-}
+};
+export default App;
