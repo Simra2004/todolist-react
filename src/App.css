@@ -13,7 +13,6 @@
 
 }
 body {
-
   background-color: #2d6da3;
   display: flex;
   justify-content: center;
@@ -53,12 +52,12 @@ body {
   border-radius: 5px;
 
 }
-.main-input :hover {
+/* .main-input :hover {
 
   border-radius: 5px;
   border: #333;
 
-}
+} */
 .header::after {
 
   content: "";
@@ -74,17 +73,7 @@ body {
   margin-top: 10px;
 
 }
-.input-field {
 
-  display: flex;
-  background: rgb(97, 157, 212);
-  border-radius: 5px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 5px 90px;
-
-}
 .checkbox input {
 
   cursor: pointer;

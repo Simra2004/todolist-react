@@ -4,10 +4,11 @@ const Input = (props) => {
     <div className="main-input">
       <input
         type="text"
+        className="text"
         value={props.value}
         onChange={(e) => {
           console.log(e.target.value);
-          props.setText(e.target.value) //type smthin in input field give event in return , extract  text frm target 
+          props.setText(e.target.value);
         }}
       />
     </div>

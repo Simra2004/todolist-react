@@ -1,31 +1,35 @@
 import React, { useState } from "react";
 import "./app.css";
-import MainInput from "./components/input/input";
-import DoItems from "./components/doitems/doitem";
-
+import MainInput from "./components/Input";
+import DoItems from "./components/doitems";
 const App = () => {
   let [text, setText] = useState("");
+  const handledelete = (Item) => {
+    SetListItems(ListItems.filter(data=> data!=Item));
+  };
   const handlesubmit = () => {
-    SetListItems([...ListItems,text]);
+    SetListItems([...ListItems, text]);
   };
   let [ListItems, SetListItems] = useState([]);
-  //list ko ui me show karana hta hai uske lie we use array mapping.loop hta hai jitne items hte hn unko iterate krke display kara deta h .
-  const List = ListItems.map((Item) => <DoItems value={Item}/>);
-  //normal loop ke andar components do item ka usko dalo {
-  
+  console.log(ListItems);
+  const List = ListItems.map((Item) => <DoItems value={Item} handledelete={handledelete} />);
   return (
     <div className="container">
       <div className="header">
-        <h1>My To Do List</h1>
+        <h1> TO DO LIST </h1>
       </div>
       <MainInput value={text} setText={setText} />
       <h4>you typed {text}</h4>
       {List}
-      <button type="button" className="submit" style={{"display":"block"}}
-       onClick={handlesubmit}>
-        submit
+      <button
+        type="submit"
+        className="submit"
+        class="btn btn-primary"
+        onClick={handlesubmit}
+      >
+        Submit
       </button>
-      {/* <DoItems /> */}
+
     </div>
   );
 };
