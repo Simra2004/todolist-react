@@ -1,5 +1,6 @@
 import React from "react";
-const doitem = () => {
+const doitem = (props) => {
+  // console.log(" herre are the props " + props.value)
   return (
     <div className="body">
       <div className="input-field">
@@ -7,7 +8,7 @@ const doitem = () => {
           <input type="checkbox" />
         </div>
         <div className="text">
-          <span>This will br your text</span>
+          <span>{props.value}</span>
         </div>
         <div className="action">$ @</div>
       </div>

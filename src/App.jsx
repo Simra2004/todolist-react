@@ -10,11 +10,13 @@ const App = () => {
   };
   let [ListItems, SetListItems] = useState([]);
   //list ko ui me show karana hta hai uske lie we use array mapping.loop hta hai jitne items hte hn unko iterate krke display kara deta h .
-  const List = ListItems.map((Item) => Item);
+  const List = ListItems.map((Item) => <DoItems value={Item}/>);
+  //normal loop ke andar components do item ka usko dalo {
+  
   return (
     <div className="container">
       <div className="header">
-        <h1>my to do list</h1>
+        <h1>My To Do List</h1>
       </div>
       <MainInput value={text} setText={setText} />
       <h4>you typed {text}</h4>
@@ -23,7 +25,7 @@ const App = () => {
        onClick={handlesubmit}>
         submit
       </button>
-      <DoItems />
+      {/* <DoItems /> */}
     </div>
   );
 };
